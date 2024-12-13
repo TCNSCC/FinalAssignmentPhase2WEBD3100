@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portfolio</title>
+    <meta name="description" content="Free open source Tailwind CSS Store template">
+    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
+    
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+	
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
+
+    <style>
+   
+.work-sans {
+    font-family: 'Work Sans', sans-serif;
+}
+                
+        #menu-toggle:checked + #menu {
+            display: block;
+        }
+        
+        .hover\:grow {
+            transition: all 0.3s;
+            transform: scale(1);
+        }
+        
+        .hover\:grow:hover {
+            transform: scale(1.02);
+        }
+        
+        .carousel-open:checked + .carousel-item {
+            position: static;
+            opacity: 100;
+        }
+        
+        .carousel-item {
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+        
+        #carousel-1:checked ~ .control-1,
+        #carousel-2:checked ~ .control-2,
+        #carousel-3:checked ~ .control-3 {
+            display: block;
+        }
+        
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+        #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+            color: #000;
+            /*Set to match the Tailwind colour you want the active one to be */
+        }
+    </style>
+
+</head>
+
+<body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+
+    <!--Nav-->
+    <nav id="header" class="w-full z-30 top-0 py-1">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+
+            <label for="menu-toggle" class="cursor-pointer md:hidden block">
+                <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <title>menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                </svg>
+            </label>
+            <input class="hidden" type="checkbox" id="menu-toggle" />
+            
+            <!-- Home and Projects Button -->
+            <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-2 justify-end" id="menu">
+                <nav>
+                    <ul class="md:flex items-center justify-end text-base text-gray-700 pt-4 md:pt-0">
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="index.html">Home</a></li>
+                        <li>
+                            <a
+                                style="background-color: #384C34;"
+                                class="inline-block no-underline text-white hover:text-black hover:underline py-2 px-12 rounded-lg bg-[#384C34] hover:bg-[#2c3b29] transition duration-200"
+                                href="projectpage.html"
+                            >
+                                Projects
+                            </a>
+                        </li>                    
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Logo on the left -->
+            <div class="order-1 md:order-1">
+                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl" href="#">
+                    <!-- Local PNG image -->
+                    <img src="images/The.png" alt="Logo" class="mr-2 h-12"> <!-- Larger PNG image -->
+                    <!-- Optional text for logo -->
+                    PORTFOLIO
+                </a>
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="carousel relative container mx-auto" style="max-width:1600px;">
+        <div class="carousel-inner relative overflow-hidden w-full">
+            <!--Slide 1-->
+            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+            <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('images/IMG_5920.jpg');">
+
+                 
+
+                </div>
+            </div>
+            <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+            <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+            <!--Slide 2-->
+            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+            <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('images/IMG_5458.jpg');">
+
+            
+
+                </div>
+            </div>
+            <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+            <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+            <!--Slide 3-->
+            <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+            <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom" style="background-image: url('med-badr-chemmaoui-ZSPBhokqDMc-unsplash.jpg');">
+                </div>
+            </div>
+            <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+            <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+            <!-- Add additional indicators for each slide-->
+            <ol class="carousel-indicators">
+                <li class="inline-block mr-3">
+                    <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+                </li>
+                <li class="inline-block mr-3">
+                    <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+                </li>
+                <li class="inline-block mr-3">
+                    <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+    <!-- divider -->
+    
+    <!-- <div class="flex my-2 text-sm font-semibold items-center text-gray-800">
+        <div class="flex-grow border-t h-px mr-4"></div>
+
+        <div class="flex-grow border-t h-px ml-6"></div>
+    </div> -->
+<!-- text section (below carousel) -->  
+<!-- <p class="text-center text-gray-500 dark:text-gray-400">Get started with an enterprise-level, professionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</p> -->
+<div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:text-center">
+        <h2 class="text-base/7 font-semibold text-lime-600">Learn More!</h2>
+        <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">Get to know my work both past and present.</p>
+        <p class="mt-6 text-lg/8 text-gray-600">Through this website you will be able to browse projects from wireframes to websites. Gain insight on my creative processes throughout my time at NSCC.</p>
+      </div>
+      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+  </div>
+    
+  <div class="flex justify-around space-x-12">
+    <!-- First Section -->
+    <div class="relative w-1/3 text-center">
+      <dl>
+        <dt class="text-lg font-semibold text-gray-900">
+          <!-- Circular SVG Icon Above Text -->
+          <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-lime-950 p-4 rounded-full flex items-center justify-center">
+            <img src="images/Untitled design (6).png" alt="Small profile picture" class="w-12 h-12 rounded-full object-cover" />
+          </div>
+          Interests
+        </dt>
+        <dd class="mt-2 text-base text-gray-600">I have always had a deep passion for creativity in all its forms. From visual design to the written word, I find inspiration in the world around me and express it through my work. My love for the arts fuels my interest in visual design, where I can combine aesthetics with functionality to create impactful designs. Writing allows me to share my thoughts and stories, while reading broadens my perspectives and sparks new ideas. Whether I'm sketching a new design, crafting a story, or simply exploring different art forms, I am constantly inspired to create and bring fresh ideas to life.</dd>
+      </dl>
+    </div>
+  
+    <!-- Second Section -->
+    <div class="relative w-1/3 text-center">
+  <dl>
+    <dt class="text-lg font-semibold text-gray-900">
+      <!-- Circular SVG Icon Above Text -->
+      <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-lime-600 p-4 rounded-full flex items-center justify-center">
+        <img src="images/Untitled design (6).png" alt="Small profile picture" class="w-12 h-12 rounded-full object-cover" />
+      </div>
+      About Me
+    </dt>
+    <dd class="mt-2 text-base text-gray-600">Hi! This introduction is long overdue. My name is Tonnette Cunningham, and I am a second-year student at Nova Scotia Community College’s IT Campus.
+
+      If you had asked me six years ago if this was something I envisioned myself doing, my strict answer would have been no. I had always envisioned working in environmental or marine sciences. But regardless of what I had in mind, I ended up here—and I couldn’t be more grateful.
+    </dd>
+  </dl>
+</div>
+
+    <!-- Third Section -->
+    <div class="relative w-1/3 text-center">
+      <dl>
+        <dt class="text-lg font-semibold text-gray-900">
+          <!-- Circular SVG Icon Above Text -->
+          <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-lime-600 p-4 rounded-full flex items-center justify-center">
+            <img src="images/Untitled design (6).png" alt="Small profile picture" class="w-12 h-12 rounded-full object-cover" />
+          </div>
+          Goals
+        </dt>
+        <dd class="mt-2 text-base text-gray-600">
+            My change in educational pathway has also led to a shift in my goals. I now see myself working in Digital Design or Digital Marketing—fields that are a stark contrast to my initial focus on the sciences. This new direction excites me because it combines creativity with technology, and I’m eager to explore how these fields can help shape the future. While my journey has taken unexpected turns, I’ve come to realize that embracing new opportunities and challenges can lead to personal and professional growth.
+
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+</div>  
+
+<!-- Button -->
+<div class="flex justify-center items-center">
+    <a href="projectpage.html" class="inline-flex justify-center items-center py-4 px-8 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+      View Projects
+      <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#384C34" viewBox="0 0 14 10">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+      </svg>
+    </a>
+  </div>
+  
+   <!-- divider -->
+
+
+
+<section class="relative bg-white dark:bg-gray-900">
+    <!-- Shape Divider -->
+    <div class="absolute inset-0 -z-10">
+        <svg class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,96L1200,0L1200,120L0,120Z" fill="#384C34"></path>
+        </svg>
+    </div>
+
+    <!-- Content -->
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16 relative z-10">
+        <div class="flex flex-col justify-center">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                What inspired me to get into coding?
+            </h1>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+                Simple answer? Python. Introduced through a high school course, I fell in love with the coding language and its versatility. From then on, I was hooked—curious to explore its potential and eager to learn more about the world of programming.
+            </p>
+            
+        </div>
+        <div>
+            <iframe class="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl" src="https://www.youtube.com/embed/kqtD5dpn9C8?si=G6zcFRS88lUqVRcn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+<!-- Rating section -->
+<section aria-label="Testimonials" class="flex flex-col justify-center items-center px-24 py-24 bg-white max-md:px-5">
+    <div class="flex flex-col items-center max-md:max-w-full">
+      <div class="flex flex-row gap-10 items-start max-md:max-w-full overflow-x-auto">
+        <article class="flex gap-2.5 py-8 pr-6 pl-8 border-2 border-solid bg-neutral-700 bg-opacity-40 border-neutral-700 min-w-[240px] w-[315px] max-md:px-5" tabindex="0">
+          <div class="flex flex-col min-w-[240px] w-[263px]">
+            <div class="flex gap-4 items-center">
+              <img src="images/Untitled design (6).png" alt="Small profile picture" class="w-12 h-12 rounded-full object-cover" />
+              <h2 class="text-xl font-semibold leading-8 text-zinc-800">
+                Level II Internship at the CIC Bedford, pitching solutions for client issues using an IBM AI model.              
+            </h2>
+            </div>
+            <div class="flex gap-5 items-start mt-20 max-md:mt-10">
+              <div class="flex shrink-0 border border-solid bg-stone-600 border-zinc-300 h-[50px] rounded-[100px] w-[50px]" role="img" aria-label="Profile picture"></div>
+              <div class="flex flex-col w-[193px]">
+                <div class="flex gap-1.5 items-start self-start" role="group" aria-label="Rating: 5 out of 5 stars">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5246ecc07c909c420fb44af746a3b0eb88e59abbfc8e7d547b4e28a6e9b7b49f?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 1" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5246ecc07c909c420fb44af746a3b0eb88e59abbfc8e7d547b4e28a6e9b7b49f?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 2" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5246ecc07c909c420fb44af746a3b0eb88e59abbfc8e7d547b4e28a6e9b7b49f?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 3" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5246ecc07c909c420fb44af746a3b0eb88e59abbfc8e7d547b4e28a6e9b7b49f?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 4" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5246ecc07c909c420fb44af746a3b0eb88e59abbfc8e7d547b4e28a6e9b7b49f?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 5" />
+                </div>
+                <div class="mt-2.5 text-lg leading-7 text-zinc-800">
+                  IBM,
+                  <br />
+                  Internship
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="flex gap-2.5 py-8 pr-6 pl-8 border-2 border-solid bg-neutral-700 bg-opacity-40 border-neutral-700 min-w-[240px] w-[315px] max-md:px-5" tabindex="0">
+          <div class="flex flex-col min-w-[240px] w-[263px]">
+            <div class="flex gap-4 items-center">
+              <img src="images/Untitled design (6).png" alt="Small profile picture" class="w-12 h-12 rounded-full object-cover" />
+              <h2 class="text-xl font-semibold leading-8 text-zinc-800">
+                Level l Intern at the CIC Beford. Responsible for creating and implemneting features for a IBM specific Project
+              </h2>
+            </div>
+            <div class="flex gap-5 items-start mt-20 max-md:mt-10">
+              <div class="flex shrink-0 border border-solid bg-violet-950 border-zinc-300 h-[50px] rounded-[100px] w-[50px]" role="img" aria-label="Profile picture"></div>
+              <div class="flex flex-col w-[193px]">
+                <div class="flex gap-1.5 items-start self-start" role="group" aria-label="Rating: 5 out of 5 stars">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1fff531d48b628926971f5d4384aa8b7769e855e26ca41db2307b839f7d4759?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 1" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1fff531d48b628926971f5d4384aa8b7769e855e26ca41db2307b839f7d4759?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 2" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1fff531d48b628926971f5d4384aa8b7769e855e26ca41db2307b839f7d4759?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 3" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1fff531d48b628926971f5d4384aa8b7769e855e26ca41db2307b839f7d4759?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 4" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1fff531d48b628926971f5d4384aa8b7769e855e26ca41db2307b839f7d4759?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 5" />
+                </div>
+                <div class="mt-2.5 text-lg leading-7 text-zinc-800">
+                  IBM,
+                  <br />
+                  Internship
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <article class="flex gap-2.5 py-8 pr-6 pl-8 border-2 border-solid bg-neutral-700 bg-opacity-40 border-neutral-700 min-w-[240px] w-[315px] max-md:px-5" tabindex="0">
+          <div class="flex flex-col min-w-[240px] w-[263px]">
+            <div class="flex gap-4 items-center">
+              <img src="images/Untitled design (6).png" alt="Small profile picture" class="w-12 h-12 rounded-full object-cover" />
+              <h2 class="text-xl font-semibold leading-8 text-zinc-800">
+                Co-op turned Job. This oppurtunity gave me many roles, from DEV to Marketing
+              </h2>
+            </div>
+            <div class="flex gap-5 items-start mt-20 max-md:mt-10">
+              <div class="flex shrink-0 border border-solid bg-stone-900 border-zinc-300 h-[50px] rounded-[100px] w-[50px]" role="img" aria-label="Profile picture"></div>
+              <div class="flex flex-col w-[193px]">
+                <div class="flex gap-1.5 items-start self-start" role="group" aria-label="Rating: 5 out of 5 stars">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5246ecc07c909c420fb44af746a3b0eb88e59abbfc8e7d547b4e28a6e9b7b49f?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 1" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5246ecc07c909c420fb44af746a3b0eb88e59abbfc8e7d547b4e28a6e9b7b49f?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 2" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5246ecc07c909c420fb44af746a3b0eb88e59abbfc8e7d547b4e28a6e9b7b49f?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 3" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5246ecc07c909c420fb44af746a3b0eb88e59abbfc8e7d547b4e28a6e9b7b49f?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 4" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5246ecc07c909c420fb44af746a3b0eb88e59abbfc8e7d547b4e28a6e9b7b49f?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb" class="object-contain shrink-0 w-5 aspect-square" alt="Rating star 5" />
+                </div>
+                <div class="mt-2.5 text-lg leading-7 text-zinc-800">
+                  Small & Local,
+                  <br />
+                  Content Writer
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+<!-- Footer -->
+<footer class="flex flex-col text-sm text-white" role="contentinfo" aria-label="Footer">
+    <div class="flex flex-col items-center py-28 w-full bg-lime-950 max-md:pb-24 max-md:max-w-full"  style="background-color: #384C34;">
+        <h2 class="text-4xl font-medium leading-snug text-center max-md:max-w-full">
+            Innovate. Inspire. Impact.
+        </h2>
+        <p class="mt-5 leading-6 text-center opacity-80 w-[659px] max-md:max-w-full" >
+            Thank you for visiting my website! I hope you learned a little bit more about me and what I can do!
+        </p>
+
+        <a href="projectpage.html" class="inline-flex items-center justify-center px-4 py-2 mt-11 text-base font-medium text-black bg-white rounded-full shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-all duration-200" aria-label="Return to homepage">👀 Project</a>
+        <div
+            class="flex flex-col self-stretch px-14 mt-24 mb-0 w-full leading-none text-center max-md:px-5 max-md:mt-10 max-md:mb-2.5 max-md:max-w-full">
+            <div
+                class="flex shrink-0 h-px bg-white bg-opacity-30 max-md:max-w-full"
+                role="separator"
+                aria-hidden="true"
+            ></div>
+            <div
+            class="flex justify-center items-center  relative  mt-12 mr-28 max-w-full w-[601px] max-md:mt-10 max-md:mr-2.5 "
+        >
+            <p class="text-center">
+                © 2024 Tonnette Cunningham. All Rights Reserved.
+            </p>
+            <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ed46240bd14f8457efa641f564bb9bf37e789418fd49c455127148ac96b7fac?placeholderIfAbsent=true&apiKey=6db4cffe6b80473db6874e83d3720fdb"
+                class="absolute right-10 object-contain rounded-none aspect-square w-[39px]"
+                alt=""
+                aria-hidden="true"
+            />
+        </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
